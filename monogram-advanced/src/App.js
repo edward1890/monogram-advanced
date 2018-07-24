@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import Footer from "./components/footer/footer";
-import Topheader from "./components/topheader/topheader";
-import Lowerheader from "./components/lowerheader/lowerheader";
-import Form from "./components/previewfont/previewfont.js"
-// import logo from './images/main_logo.png';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+// import Footer from "./components/footer/footer";
+// import Topheader from "./components/topheader/topheader";
+// import Lowerheader from "./components/lowerheader/lowerheader";
+// import Form from "./components/previewfont/previewfont.js"
+import Size from "./Pages/Size";
+import Main from "./Pages/Main";
 import './App.css';
 
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-     <Topheader />
-     <Lowerheader />
-     <Form />
-     <Footer />
-      </div>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div>
+      {/* <Nav /> */}
+      <Switch>
+        <Route exact path="/" component={Main} />
+        <Route exact path="/Size" component={Size} />
+        {/* <Route component={NoMatch} /> */}
+      </Switch>
+    </div>
+  </Router>
+);
 
 export default App;
+
